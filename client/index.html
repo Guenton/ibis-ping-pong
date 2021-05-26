@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>IBIS Ping-Pong</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+    <link rel="icon" href="./favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./index.css"/>
+    <meta name="theme-color" content="#ffffff" />
+    <meta name="description" content="Created by Guenton Brooks" />
+    <meta name="copyright" content="IBIS Management Associates B.V." />
+  </head>
+  <!-- 
+
+    Design and Implementations Provided by:
+    Guenton Brooks
+    IBIS Management Associates B.V.
+    https://www.ibis-management.com
+
+  -->
+<body>
+  <div id="root">
+    <v-app>
+      <v-main>
+        <img src="./pingpong.png" alt="Alchemy Logo" width="260" height="175">
+        <v-container>Welcome to IBIS Ping-Pong</v-container>
+      </v-main>
+    </v-app>
+  </div>
+
+</body>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
+  <script>
+    new Vue({
+      el: '#root',
+      vuetify: new Vuetify(),
+    })
+  </script>
+</html>
