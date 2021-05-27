@@ -1,5 +1,14 @@
 {
   "editor.formatOnType": true,
   "editor.formatOnPaste": true,
-  "editor.formatOnSave": true
+  "editor.formatOnSave": true,
+  "sqltools.connections": [
+    {
+      "previewLimit": 50,
+      "driver": "SQLite",
+      "database": "${workspaceFolder:ibis-ping-pong}/server/db/database.sqlite",
+      "name": "PingPonyDB"
+    }
+  ],
+  "sqltools.useNodeRuntime": true
 }
