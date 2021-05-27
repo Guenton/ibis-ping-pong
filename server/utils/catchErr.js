@@ -10,6 +10,11 @@ const catchErr = (err, res, msg) => {
     logger.error("Failed to Connect to: " + err.config.url);
     res.status(500).send(errorMsg);
 
+    // Handle Error String
+  } else if (typeof err === "string") {
+    logger.error(err);
+    res.status(400).send(err);
+
     // Handle error response from backend
   } else if (err.response) {
     // Handle backend replied with an error message

@@ -7,11 +7,13 @@ const helmet = require("helmet");
 const routes = require("./routes");
 const logger = require("./utils/logger");
 const dbTest = require("./db/dbTest");
+const dbSync = require("./db/dbSync");
 
 const app = express();
 const port = process.env.PORT || 3002;
 
 dbTest();
+dbSync();
 
 // Middleware
 app.use(cors());
