@@ -1,10 +1,12 @@
+const path = require("path");
 const { Sequelize } = require("sequelize");
 
 // const sequelize = new Sequelize('sqlite::memory:')
 
 const sequelize = new Sequelize({
   dialect: "sqlite",
-  storage: "./database.sqlite",
+  storage: path.join(__dirname, "./database.sqlite"),
+  logging: false,
 });
 
-export default sequelize;
+module.exports = sequelize;

@@ -6,9 +6,12 @@ const cors = require("cors");
 const helmet = require("helmet");
 const routes = require("./routes");
 const logger = require("./utils/logger");
+const dbTest = require("./db/dbTest");
 
 const app = express();
 const port = process.env.PORT || 3002;
+
+dbTest();
 
 // Middleware
 app.use(cors());
