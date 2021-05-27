@@ -21,6 +21,8 @@
     "express": "^4.17.1",
     "helmet": "^4.6.0",
     "ping": "^0.4.1",
+    "sequelize": "^6.6.2",
+    "sqlite3": "^5.0.2",
     "winston": "^3.3.3"
   },
   "devDependencies": {
