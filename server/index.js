@@ -6,14 +6,17 @@ const cors = require("cors");
 const helmet = require("helmet");
 const routes = require("./routes");
 const logger = require("./utils/logger");
-const dbTest = require("./db/dbTest");
-const dbSync = require("./db/dbSync");
+const dbSetup = require("./db/dbSetup");
+const pinger = require("./utils/pinger");
 
 const app = express();
 const port = process.env.PORT || 3002;
 
-dbTest();
-dbSync();
+// Initialize Database
+dbSetup();
+
+// Continuous Pings
+pinger();
 
 // Middleware
 app.use(cors());

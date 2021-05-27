@@ -1,11 +1,11 @@
 const Sequelize = require("sequelize");
 const db = require("../db");
 
-const Minutes = db.define("hosts", {
-  minute: {
+const Interval = db.define("interval", {
+  interval: {
     type: Sequelize.INTEGER,
     allowNull: false,
   },
 });
 
-module.exports = Minutes;
+module.exports = Interval;

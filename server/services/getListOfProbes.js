@@ -2,7 +2,7 @@ const ping = require("ping");
 const catchErr = require("../utils/catchErr");
 const logger = require("../utils/logger");
 
-const getListOfPings = async (req, res) => {
+const getListOfProbes = async (req, res) => {
   const hosts = req.body.hosts || [];
   // const probes = [];
   try {
@@ -18,4 +18,4 @@ const getListOfPings = async (req, res) => {
   }
 };
 
-module.exports = getListOfPings;
+module.exports = getListOfProbes;

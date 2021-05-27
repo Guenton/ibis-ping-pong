@@ -1,6 +1,4 @@
-const ping = require("ping");
 const catchErr = require("../utils/catchErr");
-const logger = require("../utils/logger");
 const Hosts = require("../models/Hosts");
 
 const getListOfHosts = async (req, res) => {
