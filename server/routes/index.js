@@ -8,6 +8,7 @@ const router = (app) => {
   app.post("/ping", (req, res) => services.pingOne(req, res));
   app.post("/pings", (req, res) => services.pingMany(req, res));
   app.put("/interval", (req, res) => services.editPingInterval(req, res));
+  app.post("/state", (req, res) => services.setPingState(req, res));
 };
 
 module.exports = router;

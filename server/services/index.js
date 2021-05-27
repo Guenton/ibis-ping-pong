@@ -6,4 +6,5 @@ module.exports = {
   pingOne: require("./pingOne"),
   pingMany: require("./pingMany"),
   editPingInterval: require("./editPingInterval"),
+  setPingState: require("./setPingState"),
 };

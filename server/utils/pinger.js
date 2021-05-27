@@ -2,13 +2,11 @@ const ping = require("ping");
 const logger = require("./logger");
 const Hosts = require("../models/Hosts");
 const Probes = require("../models/Probes");
-const Interval = require("../models/Interval");
 
-const pinger = () => {
-  // Set Default Interval to 10 seconds
-  let millisecondInterval = 10000;
+const pinger = (interval = process.env.INTERVAL) => {
+  const millisecondInterval = interval * 60000;
 
-  setInterval(async () => {
+  return setInterval(async () => {
     try {
       // Get All Hosts from DB
       const hosts = await Hosts.findAll();
@@ -29,15 +27,11 @@ const pinger = () => {
         })
       );
 
-      // Get Interval for next call
-      const { interval } = await Interval.findOne();
-      millisecondInterval = interval * 60000;
-
       // Keep Log
       const dateTime = new Date().toLocaleString();
-      logger.info(`Ping Interval: Set at ${interval} Minutes. Executed At ${dateTime}`);
+      logger.info(`Pinger: Interval is ${interval} Minutes. Last Executed At ${dateTime}`);
     } catch (err) {
-      console.log(err);
+      logger.error(err);
     }
   }, millisecondInterval);
 };

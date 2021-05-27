@@ -7,16 +7,12 @@ const helmet = require("helmet");
 const routes = require("./routes");
 const logger = require("./utils/logger");
 const dbSetup = require("./db/dbSetup");
-const pinger = require("./utils/pinger");
 
 const app = express();
 const port = process.env.PORT || 3002;
 
 // Initialize Database
 dbSetup();
-
-// Continuous Pings
-pinger();
 
 // Middleware
 app.use(cors());
