@@ -3,7 +3,7 @@ const logger = require("../utils/logger");
 const Hosts = require("../models/Hosts");
 
 const deleteHost = async (req, res) => {
-  const id = req.body.id || "";
+  const id = req.body.id || null;
   try {
     if (!id) throw "Database: No Host ID Was Received in Request to Delete";
 
@@ -16,7 +16,7 @@ const deleteHost = async (req, res) => {
     } else {
       failMsg = `Database: Remove Host with ID: ${id} - NOT FOUND`;
       logger.warn(failMsg);
-      res.status(400).send(failMsg);
+      res.status(400).json(failMsg);
     }
   } catch (err) {
     catchErr(err, res);

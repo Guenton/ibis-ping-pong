@@ -18,6 +18,11 @@ const Probes = db.define("probes", {
   isAlive: {
     type: Sequelize.BOOLEAN,
   },
+  timestamp: {
+    type: Sequelize.DATE,
+    defaultValue: Sequelize.NOW,
+    allowNull: false,
+  },
 });
 
 module.exports = Probes;

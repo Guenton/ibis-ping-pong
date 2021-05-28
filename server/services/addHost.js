@@ -8,9 +8,10 @@ const addHost = async (req, res) => {
     if (!host) throw "Database: No Host Was Received in Request to Add";
 
     const created = await Hosts.create({ host });
-    logger.info(`Database: Add Host "${created.host}" with ID: ${created.id}`);
 
-    res.status(201).json(created);
+    const msg = `Database: Add Host "${created.host}" with ID: ${created.id} - OK`;
+    logger.info(msg);
+    res.status(201).json(msg);
   } catch (err) {
     catchErr(err, res);
   }

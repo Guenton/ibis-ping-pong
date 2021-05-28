@@ -22,6 +22,7 @@ const pinger = (interval = process.env.INTERVAL) => {
             host: item.host,
             numericHost: item.numeric_host,
             time: item.time,
+            timestamp: new Date(),
             isAlive: item.alive,
           });
         })
