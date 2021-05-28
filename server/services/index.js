@@ -5,6 +5,7 @@ module.exports = {
   deleteHost: require("./deleteHost"),
   pingOne: require("./pingOne"),
   pingMany: require("./pingMany"),
-  editPingInterval: require("./editPingInterval"),
-  setPingState: require("./setPingState"),
+  getPingInterval: require("./getPingInterval"),
+  setPingInterval: require("./setPingInterval"),
+  runPingState: require("./runPingState"),
 };

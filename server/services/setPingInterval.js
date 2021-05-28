@@ -2,7 +2,7 @@ const catchErr = require("../utils/catchErr");
 const logger = require("../utils/logger");
 const Interval = require("../models/Interval");
 
-const editPingInterval = async (req, res) => {
+const setPingInterval = async (req, res) => {
   const interval = req.body.interval || "";
   try {
     if (!interval) throw "Database: No Interval was Received in Request to Edit";
@@ -17,4 +17,4 @@ const editPingInterval = async (req, res) => {
   }
 };
 
-module.exports = editPingInterval;
+module.exports = setPingInterval;

@@ -7,8 +7,9 @@ const router = (app) => {
   app.post("/delete", (req, res) => services.deleteHost(req, res));
   app.post("/ping", (req, res) => services.pingOne(req, res));
   app.post("/pings", (req, res) => services.pingMany(req, res));
-  app.put("/interval", (req, res) => services.editPingInterval(req, res));
-  app.post("/state", (req, res) => services.setPingState(req, res));
+  app.get("/interval", (req, res) => services.getPingInterval(req, res));
+  app.post("/interval", (req, res) => services.setPingInterval(req, res));
+  app.post("/state", (req, res) => services.runPingState(req, res));
 };
 
 module.exports = router;
